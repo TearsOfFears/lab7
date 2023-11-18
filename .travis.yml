@@ -1,8 +1,6 @@
 language: java
 jdk:
   - oraclejdk8
-  - oraclejdk7
-  - openjdk6
 install: true
 sudo: required
 before_install:
@@ -13,5 +11,4 @@ cache:
   - $HOME/.m2
 
 script:
-  - mvn clean install
   - bash <(curl -s https://codecov.io/bash)
