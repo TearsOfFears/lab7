@@ -7,10 +7,11 @@ install: true
 sudo: required
 before_install:
   - export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-  - mvn clean install
+  - export PATH=$JAVA_HOME/bin:$PATH
 cache:
   directories:
   - $HOME/.m2
 
 script:
+  - mvn clean install
   - bash <(curl -s https://codecov.io/bash)
