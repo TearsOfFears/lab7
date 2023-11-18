@@ -5,10 +5,12 @@ jdk:
   - openjdk6
 install: true
 sudo: required
+before_install:
+  - export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+  - mvn clean install
 cache:
   directories:
   - $HOME/.m2
 
 script:
-  - mvn clean install
   - bash <(curl -s https://codecov.io/bash)
