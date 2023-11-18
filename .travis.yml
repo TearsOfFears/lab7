@@ -4,10 +4,13 @@ jdk:
   - oraclejdk7
   - openjdk6
 install: true
+sudo: required
+before_install:
+  - mvn clean install
 cache:
   directories:
   - $HOME/.m2
 
 script:
-  - ./mvnw clean install
+  - mvn clean install
   - bash <(curl -s https://codecov.io/bash)
