@@ -5,8 +5,6 @@ jdk:
   - openjdk6
 install: true
 sudo: required
-before_install:
-  - mvn clean install
 cache:
   directories:
   - $HOME/.m2
